@@ -20,13 +20,13 @@
     "test": "mocha"
   },
   "dependencies": {
-    "copy-descriptor": "^0.1.0",
-    "define-property": "^0.2.5",
-    "kind-of": "^3.0.3"
+    "copy-descriptor": "^0.1.1",
+    "define-property": "^1.0.0",
+    "kind-of": "^5.0.0"
   },
   "devDependencies": {
-    "gulp-format-md": "*",
-    "mocha": "*"
+    "gulp-format-md": "^0.1.12",
+    "mocha": "^3.4.2"
   },
   "keywords": [
     "copy",
