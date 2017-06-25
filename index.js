@@ -15,10 +15,16 @@ var define = require('define-property');
  *
  * var obj = {};
  * copy(obj, proto);
+ *
+ * // filter out keys
+ * copy(obj, proto, function(key) {
+ *   return key !== 'index';
+ * });
  * ```
  * @param {Object} `receiver`
  * @param {Object} `provider`
- * @param {String|Array} `omit` One or more properties to omit
+ * @param {String|Array} `omit` (optional) One or more properties to omit
+ * @param {Function} `filter` (optional) Called on each key before copying the property. If the function returns false, the property will not be copied.
  * @return {Object}
  * @api public
  */
@@ -65,7 +71,7 @@ function isObject(val) {
 
 /**
  * Returns true if an array has any of the given elements, or an
- * object has any of the give keys.
+ * object has any of the given keys.
  *
  * ```js
  * has(['a', 'b', 'c'], 'c');

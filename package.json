@@ -38,7 +38,11 @@
       "gulp-format-md"
     ],
     "related": {
-      "list": []
+      "list": [
+        "copy-descriptor",
+        "define-property",
+        "kind-of"
+      ]
     },
     "reflinks": [
       "verb"
