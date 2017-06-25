@@ -23,12 +23,17 @@ var define = require('define-property');
  * @api public
  */
 
-function copy(receiver, provider, omit) {
+function copy(receiver, provider, omit, fn) {
   if (!isObject(receiver)) {
     throw new TypeError('expected receiving object to be an object.');
   }
   if (!isObject(provider)) {
     throw new TypeError('expected providing object to be an object.');
+  }
+
+  if (typeof omit === 'function') {
+    fn = omit;
+    omit = [];
   }
 
   var props = nativeKeys(provider);
@@ -38,6 +43,9 @@ function copy(receiver, provider, omit) {
 
   while (len--) {
     var key = props[len];
+    if (typeof fn === 'function' && fn(key) === false) {
+      continue;
+    }
 
     if (has(keys, key)) {
       define(receiver, key, provider[key]);
