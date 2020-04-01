@@ -22,7 +22,7 @@
   "dependencies": {
     "copy-descriptor": "^0.1.1",
     "define-property": "^1.0.0",
-    "kind-of": "^5.0.0"
+    "kind-of": "^6.0.3"
   },
   "devDependencies": {
     "gulp-format-md": "^0.1.12",
